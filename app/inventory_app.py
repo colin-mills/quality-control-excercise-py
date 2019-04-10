@@ -6,12 +6,6 @@ csv_headers = ["id", "name", "aisle", "department", "price"]
 
 
 def read_from_csv(my_csv_filepath):
-    return []
-#
-# READ
-#
-
-if __name__ == "__main__":
 
     products = []
 
@@ -19,6 +13,20 @@ if __name__ == "__main__":
         reader = csv.DictReader(csv_file)
         for ordered_dict in reader:
             products.append(dict(ordered_dict))
+
+    return products
+#
+# READ
+#
+
+if __name__ == "__main__":
+
+    products = read_from_csv(csv_filepath)
+
+    #with open(csv_filepath, "r") as csv_file:
+    #    reader = csv.DictReader(csv_file)
+    #    for ordered_dict in reader:
+    #        products.append(dict(ordered_dict))
 
     #
     # LIST

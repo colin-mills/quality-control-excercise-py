@@ -12,6 +12,7 @@ def test_read_from_csv():
     default_products = read_from_csv(default_products_filepath)
 
     assert len(default_products) == 20
+    assert default_products[0]["name"] == "Chocolate Sandwich Cookies" 
 
 
 ## TODO: test logic for writing a list of product dictionaries to a CSV file
