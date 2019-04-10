@@ -9,7 +9,7 @@ def read_from_csv(my_csv_filepath):
 
     products = []
 
-    with open(csv_filepath, "r") as csv_file:
+    with open(my_csv_filepath, "r") as csv_file:
         reader = csv.DictReader(csv_file)
         for ordered_dict in reader:
             products.append(dict(ordered_dict))
@@ -22,6 +22,8 @@ def write_to_file(my_products, my_filepath):
 
         for product in my_products:
             writer.writerow(product)
+
+
 
 def autogen_id(products):
     ID = len(products) + 1
@@ -64,7 +66,7 @@ if __name__ == "__main__":
         "price": 99.99
     } # further exploration / todo: ask for user to input
 
-    next_id = autogen_id(products)
+    next_id = len(products) + 1
 
     new_product["id"] = next_id
 
